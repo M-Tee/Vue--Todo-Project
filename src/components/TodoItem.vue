@@ -1,15 +1,25 @@
 <template>
   <div class="todo-card" :class="{'is-done':todo.done}">
     <div class="content">
+      <input type="checkbox" @change="markComplete">
       <h3 class="habit-title"> {{todo.title}} </h3>
     </div>
+    <button @click="$emit('del-todo', todo.id)" class="del">x</button>
+    <!-- <div class="icons">
+    <p class="iconify" data-icon="carbon:delete" data-inline="false" style="color: purple;"></p>
+    </div> -->
   </div>
 </template>
 
 <script>
 export default {
   name: "TodoItem",
-  props: ["todo"]
+  props: ["todo"],
+  methods:{
+    markComplete(){
+      this.todo.done = !this.todo.done
+    }
+  }
 }
 </script>
 
@@ -30,9 +40,24 @@ export default {
 .is-done{
   text-decoration: line-through;
 }
-
 .content {
   display: flex;
 }
+.del{
+  border-radius: 50px;
+  border: none;
+  background-color: purple;
+  color: white;
+  width: 30px;
+  height: 30px;
+}
+.icons{
+  display: flex;
+}
+
+.iconify {
+  padding: 5px;
+}
+
 
 </style>
