@@ -1,5 +1,5 @@
 <template>
-  <div class="todo-card" :class="{'is-done':todo.done}">
+  <div class="todo-card" :class="{'is-done':todo.completed}">
     <div class="content">
       <input type="checkbox" @change="markComplete">
       <h3 class="habit-title"> {{todo.title}} </h3>
@@ -17,7 +17,7 @@ export default {
   props: ["todo"],
   methods:{
     markComplete(){
-      this.todo.done = !this.todo.done
+      this.todo.completed = !this.todo.completed
     }
   }
 }
@@ -36,6 +36,7 @@ export default {
 
 .habit-title {
   margin: 15px;
+  color: rgba(0, 0, 0, 0.8);
 }
 .is-done{
   text-decoration: line-through;
