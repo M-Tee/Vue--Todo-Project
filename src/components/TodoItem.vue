@@ -25,10 +25,11 @@ export default {
 
 <style scoped>
 .todo-card {
+  max-width: 60%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px;
+  margin: 20px auto;
   padding: 5px 20px;
   border-radius: 20px;
   box-shadow: 0px 2px 5px rgb(207, 206, 206);
@@ -37,6 +38,7 @@ export default {
 .habit-title {
   margin: 15px;
   color: rgba(0, 0, 0, 0.8);
+  font-weight: 400;
 }
 .is-done{
   text-decoration: line-through;

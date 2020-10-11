@@ -1,7 +1,7 @@
 <template>
   <div>
     <form @submit="addTodo">
-      <input type="text" v-model="title" name="title" placeholder="Add todo" />
+      <input type="text" v-model="title" name="title" placeholder="Add todo..." />
       <input type="submit" value="Submit" class="btn" />
     </form>
   </div>
@@ -39,10 +39,12 @@
   }
   input[type="text"] {
     flex: 10;
-    padding: 5px;
+    padding: 7px;
+     border-width: 0 0px 1px 0px;
   }
   input[type="submit"] {
     flex: 2;
+    
   }
 </style>
 
